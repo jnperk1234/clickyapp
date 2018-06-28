@@ -1,0 +1,53 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    background-color: #222222;
+}
+
+.footer {
+    margin-bottom: 0;
+}
+
+.navbar-item {
+    color: white;
+}
+
+#title {
+    color: white;
+}
+
+.navbar {
+    background-color: #222222;
+}
+
+#footer-text {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    bottom: 1px;
+    padding-top: 16px;
+}
+
+#react-logo {
+    margin-top: 4px;
+    height: 45px;
+    width: 60px;
+}
+
+.onepiece-img {
+    height: 180px;
+    width: 180px;
+    margin: 24px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+#game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 64px;
+}
