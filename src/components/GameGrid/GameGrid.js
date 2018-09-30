@@ -1,11 +1,11 @@
 import React from "react";
-import CatButton from "../OnePButton";
+import OnePButton from "../OnePButton";
 
 const GameGrid = (props) => (
 
 <div id="game-grid" className="container justify-content-center">
-    {props.onep.map((op) => (
-        <OnePButton key={op.id} id={op.id} clickOp={props.clickOp}></OnePButton>
+    {props.pirates.map((pirate) => (
+        <OnePButton key={pirate.id} id={pirate.id} clickPirate={props.clickPirate}></OnePButton>
     ))}
 </div>
 );

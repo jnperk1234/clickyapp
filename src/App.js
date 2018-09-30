@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './components/NavBar';
+import Navbar from './components/Navbar';
 import FooterBar from './components/FooterBar';
 import GameGrid from './components/GameGrid';
-import OnePiece from './utilis/OnePiece';
+import Pirates from './utils/Pirates';
 
 class App extends Component {
 
@@ -11,18 +11,20 @@ class App extends Component {
     score: 0,
     topScore: 0,
     result: "Click Any Pirate To Begin!",
-    pirates: OnePiece
+    pirates: Pirates
   }
 
-
+  // Use Fisher-Yates Shuffle to shuffle the pirates array in this.state
   shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-      while (0 !== currentIndex) {
+    // While there are remaining elements to shuffle...
+    while (0 !== currentIndex) {
 
+      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
-      
+      // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
@@ -58,7 +60,7 @@ class App extends Component {
       pirate.clicked = false;
     });
     this.shufflePirates();
-    console.log("All pirates reset");
+    console.log("All Pirates reset");
   }
 
   increaseScore() {
@@ -82,12 +84,12 @@ class App extends Component {
     });
   }
 
-  clickPirate = event => {
-    
-    let PirateIndex = this.findPirateIndex(event.target.id);
+  clickOp= event => {
+
+    let pirateIndex = this.findPirateIndex(event.target.id);
     this.setGameActive(true);
 
-    if (this.state.Pirates[PirateIndex].clicked === true) {
+    if (this.state.pirates[pirateIndex].clicked === true) {
       this.setState({
         result: "You guessed Incorrectly!"
       });
@@ -98,19 +100,19 @@ class App extends Component {
       this.setState({
         result: String("You guessed Correctly!")
       });
-      this.setPiratesClicked(PirateIndex, true);
+      this.setPirateClicked(pirateIndex, true);
       console.log(this.state);
     }
 
     this.shufflePirates();
-    console.log(this.state.Pirates);
+    console.log(this.state.pirates);
   };
 
   render() {
     return (
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} gameActive={this.state.gameActive} result={this.state.result}></Navbar>
-        <GameGrid Pirates={this.state.Pirates} clickPirate={this.clickPirate}></GameGrid>
+        <GameGrid pirates={this.state.pirates} clickPirate={this.clickPirate}></GameGrid>
         <FooterBar></FooterBar>
       </div>
     );

@@ -1,1 +1,1 @@
-export {default} from "./OnePButton";
+export { default } from "./OnePButton";

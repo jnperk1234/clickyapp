@@ -1,1 +1,1 @@
-export { default } from "./GameGrid"
+export { default } from "./GameGrid";

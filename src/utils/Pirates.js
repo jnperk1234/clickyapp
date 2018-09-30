@@ -1,4 +1,4 @@
-const OnePiece= [
+const Pirates = [
     {
       id: 1,
       clicked: false
@@ -49,5 +49,5 @@ const OnePiece= [
     },
 ];
 
-module.exports = OnePiece;
+module.exports = Pirates;
 

@@ -9,7 +9,7 @@ const Navbar = (props) => (
             <span className="navbar-toggler-icon"></span>
         </button> */}
         <div className="align-center">
-            {props.gameActive ? <span className="navbar-item align-center">{props.result}</span> : <span className="navbar-item align-center">Click Any Cat To Begin!</span>}
+            {props.gameActive ? <span className="navbar-item align-center">{props.result}</span> : <span className="navbar-item align-center">Click Any Pirate To Begin!</span>}
         </div>
         <div className="navbar-item float-right">
             <Score score={props.score} topScore={props.topScore}></Score>
